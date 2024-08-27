@@ -7,9 +7,12 @@ import NotFoundPage from "./pages/NotFoundPage";
 import BookDetailPage from "./pages/BookDetailPage";
 import PublicLayout from "./layout/PublicLayout";
 import MThemeProvider from "./theme/MThemeProvider";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 function App() {
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <MThemeProvider>
         <Routes>
@@ -22,6 +25,7 @@ function App() {
         </Routes>
       </MThemeProvider>
     </BrowserRouter>
+    </Provider>
   );
 }
 
